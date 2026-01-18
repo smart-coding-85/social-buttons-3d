@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Buttons | Animated 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Connect With Us</h1>
+        <p class="subtitle">Choose your preferred platform</p>
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <button class="theme-btn active" data-theme="dark" aria-label="Dark theme">🌙</button>
+            <button class="theme-btn" data-theme="light" aria-label="Light theme">☀️</button>
+            <button class="theme-btn" data-theme="gradient" aria-label="Gradient theme">🎨</button>
+            <button class="theme-btn" data-theme="neon" aria-label="Neon theme">✨</button>
+        </div>
+
+        <ul class="social">
+            <li class="social-item">
+                <a class="social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">Facebook</span>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.205 2.25H21.513L14.286 10.51L22.788 21.75H16.13L10.916 14.933L4.95 21.75H1.64L9.37 12.915L1.216 2.25H8.04L12.753 8.481L18.205 2.25ZM17.044 19.77H18.877L7.045 4.126H5.078L17.044 19.77Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">X (Twitter)</span>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="https://google.com" target="_blank" rel="noopener noreferrer" aria-label="Google">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 12C6 15.3137 8.68629 18 12 18C14.6124 18 16.8349 16.3304 17.6586 14H12V10H21.8047V14H21.8C20.8734 18.5645 16.8379 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C15.445 2 18.4831 3.742 20.2815 6.39318L17.0039 8.68815C15.9296 7.06812 14.0895 6 12 6C8.68629 6 6 8.68629 6 12Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">Google</span>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z" fill="currentColor"></path>
+                        <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">Instagram</span>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.30558 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861L3.69295 20.307L4.81385 16.542C3.98177 15.2287 3.50002 13.6722 3.50002 12ZM12 1.5C6.20101 1.5 1.50002 6.20099 1.50002 12C1.50002 13.8802 1.97852 15.6544 2.82348 17.2022L1.03327 22.9668L6.79785 21.1766C8.34563 22.0216 10.1198 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20099 17.799 1.5 12 1.5ZM9.00003 8.5C9.00003 8.22386 9.22389 8 9.50003 8H10.5C10.7762 8 11 8.22386 11 8.5V9.5C11 9.77614 10.7762 10 10.5 10H10V11C10 12.1046 10.8955 13 12 13H13V12.5C13 12.2239 13.2239 12 13.5 12H14.5C14.7762 12 15 12.2239 15 12.5V13.5C15 13.7761 14.7762 14 14.5 14H14C14 15.6569 12.6569 17 11 17H10C8.34317 17 7.00003 15.6569 7.00003 14V11C7.00003 9.34315 8.34317 8 10 8H9.50003C9.22389 8 9.00003 8.22386 9.00003 8.5Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">WhatsApp</span>
+                </a>
+            </li>
+            <li class="social-item">
+                <a class="social-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.94 5C6.94 6.105 6.045 7 4.94 7C3.835 7 2.94 6.105 2.94 5C2.94 3.895 3.835 3 4.94 3C6.045 3 6.94 3.895 6.94 5ZM7 8.48H3V21H7V8.48ZM13.32 8.48H9.34V21H13.28V14.43C13.28 10.77 18.05 10.43 18.05 14.43V21H22V13.07C22 6.9 14.94 7.13 13.28 10.16L13.32 8.48Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="tooltip">LinkedIn</span>
+                </a>
+            </li>
+        </ul>
+
+        <p class="hint">Hover over icons for 3D effect ✨</p>
+    </div>
+
+    <script>
+        // Theme Switcher
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        const body = document.body;
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                themeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                body.className = '';
+                body.classList.add(`theme-${btn.dataset.theme}`);
+            });
+        });
+
+        // Set default theme
+        body.classList.add('theme-dark');
+    </script>
+</body>
+</html>

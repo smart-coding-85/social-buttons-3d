@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* ============================================
+   THEME VARIANTS
+   ============================================ */
+
+/* Dark Theme (Default) */
+.theme-dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+}
+
+/* Light Theme */
+.theme-light {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 50%, #d1d8e0 100%);
+  color: #2d3436;
+}
+
+.theme-light .social .social-item .social-link {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .social .social-item .social-link::before,
+.theme-light .social .social-item .social-link::after {
+  background: #d1d8e0;
+}
+
+.theme-light .title {
+  color: #2d3436;
+}
+
+.theme-light .subtitle,
+.theme-light .hint {
+  color: #636e72;
+}
+
+/* Gradient Theme */
+.theme-gradient {
+  background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #ffffff;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.theme-gradient .social .social-item .social-link {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.theme-gradient .social .social-item .social-link::before,
+.theme-gradient .social .social-item .social-link::after {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Neon Theme */
+.theme-neon {
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+.theme-neon .social .social-item .social-link {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.theme-neon .social .social-item .social-link::before,
+.theme-neon .social .social-item .social-link::after {
+  background: #2a2a2a;
+}
+
+.theme-neon .social .social-item:hover .social-link {
+  box-shadow: 
+    -20px 20px 10px rgba(0, 0, 0, 0.5),
+    0 0 30px var(--glow-color, #3b5999);
+}
+
+.theme-neon .social .social-item:nth-child(1) { --glow-color: #3b5999; }
+.theme-neon .social .social-item:nth-child(2) { --glow-color: #1da1f2; }
+.theme-neon .social .social-item:nth-child(3) { --glow-color: #dd4b39; }
+.theme-neon .social .social-item:nth-child(4) { --glow-color: #e4405f; }
+.theme-neon .social .social-item:nth-child(5) { --glow-color: #25D366; }
+.theme-neon .social .social-item:nth-child(6) { --glow-color: #0077B5; }
+
+/* ============================================
+   CONTAINER & TYPOGRAPHY
+   ============================================ */
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.hint {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+/* ============================================
+   THEME SELECTOR
+   ============================================ */
+
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.theme-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.theme-btn.active {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .theme-btn {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-light .theme-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .theme-btn.active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   SOCIAL BUTTONS
+   ============================================ */
+
+.social {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social .social-item {
+  margin: 15px 25px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social .social-item .social-link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  text-align: center;
+  transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0, 0);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 4px;
+}
+
+.social .social-item .social-link svg {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.3s ease;
+}
+
+.social .social-item .social-link::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  height: 100%;
+  width: 10px;
+  background: #b1b1b1;
+  transition: all 0.4s ease;
+  transform: rotate(0deg) skewY(-45deg);
+  border-radius: 2px 0 0 2px;
+}
+
+.social .social-item .social-link::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -5px;
+  height: 10px;
+  width: 100%;
+  background: #b1b1b1;
+  transition: all 0.4s ease;
+  transform: rotate(0deg) skewX(-45deg);
+  border-radius: 0 0 2px 2px;
+}
+
+.social .social-item .social-link:hover {
+  transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(10px, -10px);
+  box-shadow: -25px 25px 15px rgba(0, 0, 0, 0.4);
+}
+
+.social .social-item .social-link:hover svg {
+  transform: scale(1.15);
+}
+
+/* Tooltip */
+.social .social-item .social-link .tooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) rotate(30deg) skew(-25deg);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.social .social-item .social-link .tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+.social .social-item .social-link:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+/* ============================================
+   SOCIAL BRAND COLORS
+   ============================================ */
+
+/* Facebook */
+.social .social-item:nth-child(1) a {
+  color: #3b5999;
+}
+
+.social .social-item:nth-child(1):hover a {
+  background: #3b5999;
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(1):hover a::before {
+  background: #2d4474;
+}
+
+.social .social-item:nth-child(1):hover a::after {
+  background: #2d4474;
+}
+
+/* X (Twitter) */
+.social .social-item:nth-child(2) a {
+  color: #1da1f2;
+}
+
+.social .social-item:nth-child(2):hover a {
+  background: #1da1f2;
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(2):hover a::before {
+  background: #0d8ddc;
+}
+
+.social .social-item:nth-child(2):hover a::after {
+  background: #0d8ddc;
+}
+
+/* Google */
+.social .social-item:nth-child(3) a {
+  color: #dd4b39;
+}
+
+.social .social-item:nth-child(3):hover a {
+  background: #dd4b39;
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(3):hover a::before {
+  background: #c23321;
+}
+
+.social .social-item:nth-child(3):hover a::after {
+  background: #c23321;
+}
+
+/* Instagram */
+.social .social-item:nth-child(4) a {
+  color: #e4405f;
+}
+
+.social .social-item:nth-child(4):hover a {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(4):hover a::before {
+  background: linear-gradient(45deg, #c4792a, #bc5630, #b12037, #a31c52, #981470);
+}
+
+.social .social-item:nth-child(4):hover a::after {
+  background: linear-gradient(45deg, #c4792a, #bc5630, #b12037, #a31c52, #981470);
+}
+
+/* WhatsApp */
+.social .social-item:nth-child(5) a {
+  color: #25D366;
+}
+
+.social .social-item:nth-child(5):hover a {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(5):hover a::before {
+  background: #1da851;
+}
+
+.social .social-item:nth-child(5):hover a::after {
+  background: #1da851;
+}
+
+/* LinkedIn */
+.social .social-item:nth-child(6) a {
+  color: #0077B5;
+}
+
+.social .social-item:nth-child(6):hover a {
+  background: #0077B5;
+  color: #ffffff;
+}
+
+.social .social-item:nth-child(6):hover a::before {
+  background: #005f91;
+}
+
+.social .social-item:nth-child(6):hover a::after {
+  background: #005f91;
+}
+
+/* ============================================
+   FOCUS STATES (Accessibility)
+   ============================================ */
+
+.social .social-item .social-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+}
+
+.social .social-item .social-link:focus-visible {
+  transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(10px, -10px);
+  box-shadow: 
+    -25px 25px 15px rgba(0, 0, 0, 0.4),
+    0 0 0 3px rgba(66, 153, 225, 0.6);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .social .social-item {
+    margin: 12px 18px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .social .social-item .social-link::after {
+    top: 45px;
+  }
+
+  .social .social-item .social-link svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .social .social-item {
+    margin: 10px 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .social .social-item .social-link::after {
+    top: 40px;
+  }
+
+  .social .social-item .social-link svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social .social-item .social-link .tooltip {
+    display: none;
+  }
+
+  .theme-selector {
+    gap: 8px;
+  }
+
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.social {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social .social-item {
+  animation: popIn 0.5s ease-out backwards;
+}
+
+.social .social-item:nth-child(1) { animation-delay: 0.1s; }
+.social .social-item:nth-child(2) { animation-delay: 0.2s; }
+.social .social-item:nth-child(3) { animation-delay: 0.3s; }
+.social .social-item:nth-child(4) { animation-delay: 0.4s; }
+.social .social-item:nth-child(5) { animation-delay: 0.5s; }
+.social .social-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
